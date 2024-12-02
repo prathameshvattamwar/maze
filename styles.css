@@ -1,0 +1,123 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fff;
+}
+
+#maze {
+    display: grid;
+    grid-template-columns: repeat(30, 30px);
+    grid-template-rows: repeat(20, 30px);
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell.green {
+    position: relative;
+    background-color: transparent;
+}
+
+.cell.green::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 30%;
+    height: 30%;
+    background-color: rgba(0, 128, 0, 0.316);
+    border-radius: 50%;
+}
+
+.wall {
+    background-color: #a8a8a8;
+}
+
+.path {
+    background-color: #fff;
+}
+
+#controls {
+    position: fixed;
+    bottom: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.horizontal-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.control-btn {
+    font-size: 1.5rem;
+    padding: 15px;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid #000;
+    background-color: #f4f4f4;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+    background-color: #d3d3d3;
+}
+
+.control-btn:active {
+    background-color: #c0c0c0;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.control-btn:active, .control-btn.active {
+    background-color: #c0c0c0;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#restart-container {
+    position: fixed;
+    bottom: 4.5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#restart-btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #000;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#restart-btn:hover {
+    background-color: #d3d3d3;
+}
+
+#restart-btn:active {
+    background-color: #c0c0c0;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
